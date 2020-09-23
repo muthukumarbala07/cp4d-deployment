@@ -66,7 +66,7 @@ Network load balancers        3
 Public IP addresses           3
 Private IP addresses          7
 
-****************************************************************************************************\n"
+****************************************************************************************************"
 
 ## Setting up the variable for default limit of the resource.
 
@@ -101,7 +101,7 @@ function calculate_available_resource_quota()
     fi
 
     #echo -e "Resource name:$quota_name Required:$quota_required Available:$az_available_quota Conditional_check:$condition_met" | column -t -s' '
-   printf  "%-40s |  %-40s |  %-40s |  %-40s" "$quota_name" "$quota_required" "$az_available_quota" "$condition_met"
+   printf  "%-25s |  %-25s |  %-25s |  %-25s" "$quota_name" "$quota_required" "$az_available_quota" "$condition_met"
    printf "\n"
 )
 
@@ -110,13 +110,13 @@ function calculate_available_resource_quota()
 ### Function calling starts here:
 echo -e " Summary of the resource quota details for the subscriptionId : $az_subscription_id "
 
-echo -e "\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo -e "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-printf  "%-40s |  %-40s |  %-40s |  %-40s" "Resource_name" "Required" "Available" "Validation_check"
+printf  "%-25s |  %-25s |  %-25s |  %-25s" "Resource_name" "Required" "Available" "Validation_check"
 
 printf "\n"
 
-printf "%-40s |  %-40s |  %-40s |  %-40s" "---------------------------" "---------------------------" "---------------------------" "---------------------------"
+printf "%-25s |  %-25s |  %-25s |  %-25s" "-----------------------" "-----------------------" "-----------------------" "-----------------------"
 
 printf "\n"
 
@@ -132,6 +132,6 @@ calculate_available_resource_quota loadBalancers '"localizedValue": "Load Balanc
 
 calculate_available_resource_quota publicIpAddresses '"localizedValue": "Public IP Addresses"' $network_limit_output_file $az_public_ip_address_quota_required
 
-echo -e "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+echo -e "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 
 ## End of Script
