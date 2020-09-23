@@ -12,7 +12,7 @@
 
 read -p "Enter the client ID of the service principal created ie., appId  : " az_client_id
 read -p "Enter the client secret of the service principal created ie., password  : " az_client_secret
-read -p "Enter the tenandId  : " az_tenant_id
+read -p "Enter the tenantId  : " az_tenant_id
 read -p "Enter the subscriptionId  : " az_subscription_id
 read -p "Please enter the location for which the resource quota information is required (eg., eastus) : " az_location_name
 
@@ -108,8 +108,7 @@ function calculate_available_resource_quota()
 ## Calculating the available resource quota.:
 
 ### Function calling starts here:
-
-echo -e "***** Output Summary *****"
+echo -e " Summary of the resource quota details for the subscriptionId : $az_subscription_id "
 
 echo -e "\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
